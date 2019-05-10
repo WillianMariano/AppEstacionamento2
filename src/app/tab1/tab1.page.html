@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="center" >
+      Estacionamento
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="div1">   
+    <h4>Ticket Estacionamento</h4><br>  
+    <ion-item class="item1" > 
+      <ion-label position="floating">Insira o código do ticket</ion-label>
+      <ion-input type="tel" [(ngModel)]="service.codigo" clearInput></ion-input>
+    </ion-item>
+    <ion-button class="bt" color="success" expand="block" (click)="Verificar()">Verificar ticket</ion-button>
+    <ion-button class="bt"  color="success" expand="block" [routerLink]="['/pagar', service.codigo]" [disabled]="service.verifica==true">Continuar</ion-button>
+  </div>
+</ion-content>
